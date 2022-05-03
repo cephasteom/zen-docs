@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Zen',
-  tagline: 'Live coding with single line expressions',
+  tagline: 'Live code complex musical patterns, using simple Javascript expressions',
   url: 'https://zen-docs.cephasteom.co.uk',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -23,14 +23,12 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl: 'https://github.com/petethomasmusique/zen-docs/tree/main/',
         },
         blog: {
           showReadingTime: true,
-          // Please change this to your repo.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/petethomasmusique/zen-docs/tree/main/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -43,21 +41,27 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'My Site',
+        title: 'Zen',
         logo: {
-          alt: 'My Site Logo',
-          src: 'img/logo.svg',
+          alt: 'Zen Logo',
+          src: 'img/zen.png',
         },
         items: [
           {
             type: 'doc',
-            docId: 'intro',
+            docId: 'tutorial/intro',
             position: 'left',
             label: 'Tutorial',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/facebook/docusaurus',
+            type: 'doc',
+            docId: 'docs/intro',
+            position: 'left',
+            label: 'Documentation',
+          },
+          // {to: '/blog', label: 'Blog', position: 'left'},
+          {
+            href: 'https://github.com/petethomasmusique/zen-docs',
             label: 'GitHub',
             position: 'right',
           },
@@ -79,16 +83,8 @@ const config = {
             title: 'Community',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
                 label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                href: 'https://twitter.com/CTeom',
               },
             ],
           },
@@ -101,12 +97,12 @@ const config = {
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: 'https://github.com/petethomasmusique/zen-docs',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Cephas Teom`,
       },
       prism: {
         theme: lightCodeTheme,
