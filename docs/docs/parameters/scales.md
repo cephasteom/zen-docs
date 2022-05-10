@@ -1,24 +1,8 @@
-# Scale
-```js
-'scale 8 d`dorian'
-```
-`scale` populates the `n` parameter using notes from a list of predetermined scales and modes.  
-
-## Arguments
-`scale <length> ...<scale>`
-* `length` - number of notes in each scale. A value of 16 will return two octaves of an eight-note scale.
-* `scale` - any number of scales using the syntax <root`name>. Omitting the root will always return scales with a tonic of c.
-
-## Example
-```js
-s0.yps=['scale 8 f`lydian c`minor']
-s0.x=s/2
-s0.y=t*8
-s0.e=16n
-```
-This results in two eight-note scales, mapped across the y axis.
-
-## Available Scales
+---
+sidebar_position: 4
+---
+# Scales
+Adapted from Tidal Cycles - thanks for that!
 * minPent: [0,3,5,7,10]
 * majPent: [0,2,4,7,9]
 * ritusen: [0,2,5,7,9]
