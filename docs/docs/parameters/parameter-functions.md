@@ -35,11 +35,27 @@ To do
 To do
 
 ## chords
-To do
+Map a series of chords across the canvas. Chords are written using syntax ```<root`name>```, as in ```d`minorSharp5```. Where the root is omitted, it returns the desired chord with a default tonic of C.
+
+This can be passed directly to `n`. It is also intended for combining the `chord` and `inversion` parameters. See [chord](/docs/docs/parameters/special-parameters#chord) and [inversion](/docs/docs/parameters/special-parameters#inversion).
+```js
+zps=['chord chords c`min7 d`min7']
+
+// inversion inverts chords in chord parameter above and compiles to the n parameter
+s0.xps=['inversion seq  0 1 2 3', 'dur 1', 'cut 0']
+s0.x=t*4
+s0.y=t*4
+s0.z=s * ((c%6)/6)
+s0.e=8n
+
+// Can also be passed directly to the n parameter
+s1.xps=['n chords c`min7 d`min7', 'dur 1', 'cut 0']
+...
+```
 ## scales
 Map a series of scales across the canvas. Scales are written using syntax ```<root`name>```, as in ```d`dorian```. Where the root is omitted, it returns the desired scale with a default tonic of C.
 
-Although this can be passed directly to `n`, it is intended for be used by combining the `scale` and `degree` parameters. See [scale](/docs/docs/parameters/special-parameters#scale) and [degree](/docs/docs/parameters/special-parameters#degree).
+Although this can be passed directly to `n`, it is intended to be used by combining the `scale` and `degree` parameters. See [scale](/docs/docs/parameters/special-parameters#scale) and [degree](/docs/docs/parameters/special-parameters#degree).
 ```js
 zps=['scale scales c`ionian d`dorian f`lydian g`mixolydian a`aeolian']
 

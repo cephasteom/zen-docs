@@ -14,8 +14,7 @@ s0.xps=['inst fm']
 s0.yps=['harm range 1 4 0.25']
 ```
 
-When you trigger an event or mutation at a particular point in space, under the hood, these compile to an object - for example `{n: 36, reverb: 0.25, harm: 3.75}` - and sent to the synthesis engine as arguments.
-
+When you trigger an event or mutation at a particular point in space, Zen calculates the synth arguments from the parameters mapped to each axis. Under the hood, these compile to an object - for example `{n: 36, reverb: 0.25, harm: 3.75}` - and sent to the synthesis engine.
 ## Syntax
 ### Single values
 Single values can be supplied to parameters using the syntax `<name> <value>`, as in:
@@ -23,7 +22,9 @@ Single values can be supplied to parameters using the syntax `<name> <value>`, a
 s0.xps=['n 60']
 ```
 ### Multiple values
-Multiple values can be supplied to parameters using the syntax `<name> <functionName> <...args>`, as in:
+Multiple values can be supplied to parameters using [parameter functions](/docs/docs/parameters/parameter-functions), with the syntax:  
+`<name> <functionName> <...args>`.  
+For example:
 ```js
 // a continuous range of values
 s0.xps=['modi range 0 4']
@@ -32,12 +33,15 @@ s0.xps=['n range 0 12 1']
 // a sequence of values
 s0.xps=['amp seq 0 0.25 0.5 0.75']
 ```
-See [Parameter Functions](/docs/docs/parameters/parameter-functions) for a list of available functions
+See [Parameter Functions](/docs/docs/parameters/parameter-functions) for a complete list of available functions.
 
 ## Combining Parameters
-Parameters are inherited from global `xps`, `yps`, `zps`, then stream `xps`, `yps`, `zps`. Duplicate parameters overwrite each other, but you can combine most parameters using the common maths operators `+`, `-`, `*`, `/` - for example:
+Parameters are inherited from global `xps`, `yps`, `zps`, then stream `xps`, `yps`, `zps`. Duplicate parameters overwrite each other, but you can combine most parameters using the operators `+`, `-`, `*`, `/`. For example:
 ```js
-xps=['+n seq 34 36 38 40']
+xps=['n seq 34 36 38 40']
+
+// Transpose sequence up an octave
+s0.xps=['+n 12']
 ```
 
 ## Mutating Parameters
@@ -49,4 +53,4 @@ s0.m=t%q < q/2
 ```
 
 ## Parameter Names
-Zen is pretty agnostic about the parameter names you provide - to keep things open for integration with other tech. That said, there's a few [common parameters](/docs/docs/parameters/common-parameters) which you'll use a lot, and others that become active when you've chosen a particular instrument. Common parameter names are listed in this section, with instrument specific parameters listed in the instruments section.
+Zen is pretty agnostic about the parameter names you provide - to keep things open for integration with other equipment. That said, there's a few [common parameters](/docs/docs/parameters/common-parameters) which you'll use a lot, and others that become active when you've chosen a particular instrument. Common parameter names are listed in the following subsection. Instrument specific parameters are listed in the [instruments](/docs/docs/instruments) section.

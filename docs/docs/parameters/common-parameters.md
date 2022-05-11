@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Common Parameters
 ## n
-`n` refers to midi note number. E.g. 60 = middle C / C4. It accepts a single value and can also handle polyphony.
+`n` refers to midi note number. E.g. 60 = middle C / C4. It accepts a single value, can also handle polyphony, and can use parameter functions such as [seq](/docs/docs/parameters/parameter-functions#seq) and [range](/docs/docs/parameters/parameter-functions#range).
 ```js
 // sequence
 'n seq 36 38 [42,44] 50'
@@ -23,16 +23,16 @@ sidebar_position: 1
 // define a sequence, transpose by 1 or 2 octaves
 xps=['n seq 0 4 7', '+n seq 12 24']
 ```
+The example below maps a chromatic scale to the x axis.
 ```js
 xps=['n range 36 48 1']
 s0.x=t*8
 s0.y=s/2
 s0.e=12n
 ```
-The example above maps a chromatic scale to the x axis.
 
 ## dur
-`dur` determines how long each note should sustain for before being released. It is measured in beats, and so is relative to the bpm.
+`dur` determines how long each note should sustain, before being released. It is measured in beats, and so is relative to the bpm.
 ```js
 'dur range 0.1 1'
 ```
