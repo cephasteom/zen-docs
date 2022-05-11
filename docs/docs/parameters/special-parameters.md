@@ -38,6 +38,7 @@ s0.x=t*4
 s0.y=s/2
 s0.e=8n
 ```
+For chords that span more than one octave, the root is removed for greater clarity.
 
 ## scale
 ```js

@@ -3,54 +3,113 @@ sidebar_position: 5
 ---
 # Chords
 Adapted from Tidal Cycles - thanks for that!
-TODO: Aliases
-* major: [0,4,7]
-* aug: [0,4,8]
-* six: [0,4,7,9]
-* sixNine: [0,4,7,9,14]
-* major7: [0,4,7,11]
-* major9: [0,4,7,11,14]
-* add9: [0,4,7,14]
-* major11: [0,4,7,11,14,17]
-* add11: [0,4,7,17]
-* major13: [0,4,7,11,14,21]
-* add13: [0,4,7,21]
-* dom7: [0,4,7,10]
-* dom9: [0,4,7,14]
-* dom11: [0,4,7,17]
-* dom13: [0,4,7,21]
-* sevenFlat5: [0,4,6,10]
-* sevenSharp5: [0,4,8,10]
-* sevenFlat9: [0,4,7,10,13]
-* nine: [0,4,7,10,14]
-* eleven: [0,4,7,10,14,17]
-* thirteen: [0,4,7,10,14,17,21]
-* minor: [0,3,7]
-* diminished: [0,3,6]
-* minorSharp5: [0,3,8]
-* minor6: [0,3,7,9]
-* minorSixNine: [0,3,9,7,14]
-* minor7flat5: [0,3,6,10]
-* minor7: [0,3,7,10]
-* minor7sharp5: [0,3,8,10]
-* minor7flat9: [0,3,7,10,13]
-* minor7sharp9: [0,3,7,10,14]
-* diminished7: [0,3,6,9]
-* minor9: [0,3,7,10,14]
-* minor11: [0,3,7,10,14,17]
-* minor13: [0,3,7,10,14,17,21]
-* one: [0]
-* five: [0,7]
-* sus2: [0,2,7]
-* sus4: [0,5,7]
-* sevenSus2: [0,2,7,10]
-* sevenSus4: [0,5,7,10]
-* nineSus4: [0,5,7,10,14]
-* sevenFlat10: [0,4,7,10,15]
-* nineSharp5: [0,1,13]
-* minor9sharp5: [0,1,14]
-* sevenSharp5flat9: [0,4,8,10,13]
-* minor7sharp5flat9: [0,3,8,10,13]
-* elevenSharp: [0,4,7,10,14,18]
-* minor11sharp: [0,3,7,10,14,18]
-
+* major
+* maj
+* M
+* aug
+* plus
+* sharp5
+* six
+* sixNine
+* six9
+* sixby9
+* major7
+* maj7
+* major9
+* maj9
+* add9
+* major11
+* maj11
+* add11
+* major13
+* maj13
+* add13
+* dom7
+* dom9
+* dom11
+* dom13
+* sevenFlat5
+* sevenSharp5
+* sevenFlat9
+* nine
+* eleven
+* thirteen
+* minor
+* min
+* m
+* diminished
+* dim
+* minorSharp5
+* msharp5
+* mS5
+* minor6
+* min6
+* m6
+* minorSixNine
+* minor69
+* min69
+* minSixNine
+* m69
+* mSixNine
+* m6by9
+* minor7flat5
+* minor7f5
+* min7flat5
+* min7f5
+* m7flat5
+* m7f5
+* minor7
+* min7
+* m7
+* minor7sharp5
+* minor7s5
+* min7sharp5
+* min7s5
+* m7sharp5
+* m7s5
+* minor7flat9
+* minor7f9
+* min7flat9
+* min7f9
+* m7flat9
+* m7f9
+* minor7sharp9
+* minor7s9
+* min7sharp9
+* min7s9
+* m7sharp9
+* m7s9
+* diminished7
+* dim7
+* minor9
+* min9
+* m9
+* minor11
+* min11
+* m11
+* minor13
+* min13
+* m13
+* one
+* five
+* sus2
+* sus4
+* sevenSus2
+* sevenSus4
+* nineSus4
+* ninesus4
+* sevenFlat10
+* nineSharp5
+* minor9sharp5
+* minor9s5
+* min9sharp5
+* min9s5
+* m9sharp5
+* m9s5
+* sevenSharp5flat9
+* minor7sharp5flat9
+* m7sharp5flat9
+* elevenSharp
+* minor11sharp
+* m11sharp
+* m11s
