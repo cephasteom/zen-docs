@@ -12,8 +12,6 @@ s0.xps=['modi range 0 4']
 // range from 1 to 4, in steps of 0.5
 s0.xps=['harm range 1 4 0.5']
 ```
-## rangex
-To do
 ## seq
 `<param> seq <...args>`  
 Map a sequence of values across the canvas. Accepts any number of arguments, which can be numbers, strings, or arrays of numbers where appropriate.
@@ -24,16 +22,43 @@ s0.xps=['n seq 36 38 [40,42,45] 60']
 s0.xps=['inst seq fm mem-bd']
 ```
 ## sine
-To do
-## square
-To do
-## saw
-To do
-## tri
-To do
-## noise
-To do
+`<param> sine <low> <high> <step> <frequency>`  
+Map a sequence of sine values across the canvas. Scale between high and low value and set the amount of cycles that fit onto the canvas using frequency.
+```js
+s0.xps=['n sine 36 72 4 8', 'dur 4', 'cut 0']
+s0.x=t*4
+s0.y=s/2
+s0.e=16n
+```
 
+## cosine
+`<param> cosine <low> <high> <step> <frequency>`  
+Map a sequence of cosine values across the canvas. Scale between high and low value and set the amount of cycles that fit onto the canvas using frequency.
+```js
+s0.xps=['n 60', '_vol cosine 0.5 0.9 0 4', 'dur 4', 'cut 0']
+s0.x=t*4
+s0.y=s/2
+s0.e=1n
+s0.m=1
+```
+## noise
+`<param> noise <low> <high> <step>`  
+Map a sequence of noise values across the canvas. Noise is seeded so stays the same until you refresh the page. 
+```js
+s0.xps=['n rand 36 72 4 8', 'dur 4', 'cut 0', 'harm rand 0.25 4 0.25']
+s0.x=t*4
+s0.y=s/2
+s0.e=16n
+```
+## rand
+`<param> rand <low> <high> <step>`  
+Map a sequence of random values across the canvas. Sequence changes each time you execute the code. For repeatable results, use [noise](#noise).
+```js
+s0.xps=['n rand 36 72 4 8', 'dur 4', 'cut 0', 'harm rand 0.25 4 0.25']
+s0.x=t*4
+s0.y=s/2
+s0.e=16n
+```
 ## chords
 Map a series of chords across the canvas. Chords are written using syntax ```<root`name>```, as in ```d`minorSharp5```. Where the root is omitted, it returns the desired chord with a default tonic of C.
 
