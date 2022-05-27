@@ -7,7 +7,7 @@ sidebar_position: 2
 ```js
 'chord chords f`min7 c`min7'
 ```
-Intended to hold a list of [chords](/docs/docs/parameters/chords), `chord` does not make a sound itself, but is 'hooked into' by an [inversion](#inversion) parameter further downstream. It is commonly used to set a global harmony, which can then be called on and interpreted in different ways by different streams. 
+Intended to hold a list of [chords](/docs/docs/parameters/chords), `chord` does not make a sound itself, but is 'hooked into' by an [inversion](#inversion) parameter further downstream. It is commonly used to set a global harmony, which can then be called on and interpreted in different ways by other streams. 
 
 It is best populated with the [chords](/docs/docs/parameters/parameter-functions#chords) parameter function, but can also be populated by other methods like so:
 ```js
@@ -22,7 +22,7 @@ For a working example, see [inversion](#inversion) below.
 ```
 `inversion` populates the `n` parameter using chords inherited from a preceding instance of the [chord](#chord) parameter (see above), which are then inverted a set number of times.
 ```js
-xps=['reverb 0', 'pan range -1 1', 'revtime 2', 'chord chords f`min7']
+xps=['chord chords f`min7']
 
 s0.xps=['inversion range 0 8 1', 'dur 1', 'cut 0', '-n 0']
 s0.x=t*4
@@ -31,7 +31,7 @@ s0.e=8n
 ```
 It can be combined with preceding instances of `n` using operators. 
 ```js
-xps=['reverb 0', 'pan range -1 1', 'revtime 2', 'chord chords f`min7', 'n 4']
+xps=['chord chords f`min7', 'n 4']
 
 s0.xps=['+inversion 0', 'dur 1', 'cut 0', '-n 0']
 s0.x=t*4
@@ -44,7 +44,7 @@ For chords that span more than one octave, the root is removed for greater clari
 ```js
 'scale scales d`dorian c`minor g`mixolydian'
 ```
-Intended to hold a list of [scales](/docs/docs/parameters/scales), `scale` does not make a sound itself, but is 'hooked into' by a [degree](#degree) parameter further downstream. It is commonly used to set a global harmony, which can then be called on and interpreted in different ways by different streams. 
+Intended to hold a list of [scales](/docs/docs/parameters/scales), `scale` does not make a sound itself, but is 'hooked into' by a [degree](#degree) parameter further downstream. It is commonly used to set a global harmony, which can then be called on and interpreted in different ways by other streams. 
 
 It is best populated with the [scales](/docs/docs/parameters/parameter-functions#scales) parameter function, but can also be populated by other methods like so:
 ```js

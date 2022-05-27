@@ -4,21 +4,21 @@ sidebar_position: 1
 
 # Common Parameters
 ## n
-`n` refers to midi note number. E.g. 60 = middle C / C4. It accepts a single value, can also handle polyphony, and can use parameter functions such as [seq](/docs/docs/parameters/parameter-functions#seq) and [range](/docs/docs/parameters/parameter-functions#range).
+`n` refers to midi note number. E.g. 60 = middle C / C4. It accepts a single value, can handle polyphony, and can use parameter functions such as [seq](/docs/docs/parameters/parameter-functions#seq), [range](/docs/docs/parameters/parameter-functions#range), and [chords](/docs/docs/parameters/parameter-functions#chords).
 ```js
+// a single note
+'n 60'
+// a single chord
+'n [40,44,47]'
 // sequence
 'n seq 36 38 [42,44] 50'
 // range 
 'n range 0 12 1'
-// a single chord
-'n [40,44,47]'
-// a single note
-'n 60'
 // a chord sequence
 'n chords c`minor g`dom7'
 ```
 
-`n` can be combined using common operators:
+`n` can be combined using maths operators:
 ```js
 // define a sequence, transpose by 1 or 2 octaves
 xps=['n seq 0 4 7', '+n seq 12 24']
@@ -58,7 +58,7 @@ s0.y=t*4
 s0.e=2n
 ```
 ## cut
-Using `cut`, events in one stream can release events in another. Expects integers, or arrays or integers, representing stream indexes
+Using `cut`, events in one stream can release events in another. Expects integers, or arrays of integers, representing stream indexes
 ```js
 'cut [0,1]'
 ```

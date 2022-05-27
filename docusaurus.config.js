@@ -55,7 +55,7 @@ const config = {
           },
           {
             type: 'doc',
-            docId: 'docs/intro',
+            docId: 'docs/intro/index',
             position: 'left',
             label: 'Documentation',
           },

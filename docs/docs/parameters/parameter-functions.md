@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 0
 ---
 # Parameter Functions
 Multiple values can be supplied to a parameter using the syntax `<param> <functionName> <...args>`.
