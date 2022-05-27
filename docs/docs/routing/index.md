@@ -1,6 +1,6 @@
 # Routing
 ## Multichannel
-Zen for the browser is designed to be plugin and play. Later iterations may enable more custom configuration. However, currently by default, Zen connects to your output (in most cases your stereo speakers or headphones), giving you two channels of audio. 
+Zen for the browser is designed to be plug and play. Later iterations may enable more custom configuration. However, currently by default, Zen connects to your output (in most cases your stereo speakers or headphones), giving you two channels of audio. 
 
 If your output device has more channels than this, Zen automatically places each stream on a stereo pair, with effects routed to the final pair. Ie. if your output device has 8 channels:
 ```js
