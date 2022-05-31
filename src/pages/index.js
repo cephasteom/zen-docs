@@ -19,6 +19,12 @@ function HomepageHeader() {
             to="/docs/tutorial/intro">
             Zen Tutorial - 5min
           </Link>
+        
+          <Link
+            className={clsx("button button--secondary button--lg", styles.button)}
+            to="https://zen.cephasteom.co.uk/">
+            Zen Editor
+          </Link>
         </div>
       </div>
     </header>
