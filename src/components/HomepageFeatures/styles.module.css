@@ -9,3 +9,13 @@
   height: 200px;
   width: 200px;
 }
+
+.logo {
+  width: 30%;
+  padding: 1em 0;
+  filter: opacity(0.25);
+}
+
+[data-theme='dark'] .logo {
+  filter: invert()
+}

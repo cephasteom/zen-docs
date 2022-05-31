@@ -3,7 +3,7 @@ sidebar_position: 5
 ---
 
 # Logical Expressions
-Logical expressions are used to determine when a stream should trigger and event, or mutate, and are assigned to the `e` and `m` properties of a stream object, respectively. Javascript is able to convert none boolean values to `true` or `false` due to its built-in type coercion.
+Logical expressions are used to determine when a stream should trigger an event or mutate. They are assigned to the `e` and `m` properties of a stream object and should be a true/false (boolean) value. However, Javascript is able to convert non-boolean values to `true` or `false` due to its built-in type coercion.
 
 Below, the stream `s0` triggers a single synth event every cycle; `(t%q)` returns a `0` (understood as `false` due to type coercion) once per cycle, inverted to `true` with `!` - see below for [an easier way to do this](#note-values).
 ```js
@@ -12,7 +12,7 @@ s0.y=s/2
 s0.e=!(t%q)
 ```
 
-Here, `s0` and `s1` each trigger an event every quarter note, with `s1` events offset by an eighth note each time. 
+Here, `s0` and `s1` trigger events every quarter note, with `s1` events offset by an eighth note each time. 
 ```js
 s0.x=t*(s/q)
 s0.y=s * 0.25

@@ -2,12 +2,12 @@
 sidebar_position: 4
 ---
 # Arithmetic Expressions
-Arithmetic expressions are used to define the trajectory of streams as they move in time and are assigned to the `x`, `y`, and `z` properties of a stream object. These properties accept numbers only, hence the use of arithmetic expressions. In the following example, `s0` moves vertically, down the middle of the canvas, at a rate of one pixel per division.
+Arithmetic expressions are used to define the trajectory of streams as they move in time and are assigned to the `x`, `y`, and `z` properties of a stream object. These properties accept numbers only. In the following example, `s0` moves vertically, down the middle of the canvas, at a rate of one pixel per division.
 ```js
 s0.x=s/2
 s0.y=t 
 ```
-Values are wrapped to the size of the canvas. In the case of the example above, when `t` reaches 256, the stream will reappear at the top.
+Values are wrapped to the size of the canvas. In the preceding example, when `t` reaches 256, the stream reappears at the top.
 
 Logical operators - such as `&&`, `||` - and ternary expressions - `condition ? ifTrue : ifFalse` - can add greater complexity to the movement of the stream.
 ```js
