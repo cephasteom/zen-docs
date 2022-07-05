@@ -21,6 +21,13 @@ s0.xps=['n seq 36 38 [40,42,45] 60']
 // instrument expects strings
 s0.xps=['inst seq fm mem-bd']
 ```
+## scale
+`<param> scale <root\'scale> <length>`  
+Maps a scale across the canvas. Nominally, to be used with `n` but may have other applications where a parameter accepts integers in that range. See list of [scales](/docs/docs/parameters/scales) for possible values.
+```js
+// c dorian mode, comprised of 16 notes, mapped across the x axis
+s0.xps=['n scale c`dorian 16']
+```
 ## sine
 `<param> sine <low> <high> <step> <frequency>`  
 Map a sequence of sine values across the canvas. Scale between high and low value and set the amount of cycles that fit onto the canvas using frequency.
