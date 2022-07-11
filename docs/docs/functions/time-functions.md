@@ -6,14 +6,14 @@ sidebar_position: 0
 Functions used to manipulate time. 
 ## off
 `off(t, expr, value)`  
-Offset `t` (time) by a given fraction of a cycle. ie. 0.5 would offset t by q/2.
+Offset `t` (time) by a given fraction of a cycle.
 ```js
 // move across the canvas
 s0.x=t*4
 s0.y=s*0.25
 
-// reference s0's x movement (s0x) and offset by 16 divisions
-s1.x=off(t, t => s0x, 16)
+// reference s0's x movement (s0x) and offset by half a cycle
+s1.x=off(t, t => s0x, 0.5)
 s1.y=s*0.75
 ```
 ## slow
