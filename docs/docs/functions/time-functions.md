@@ -5,8 +5,8 @@ sidebar_position: 0
 # Time Functions
 Functions used to manipulate time. 
 ## off
-`off(t, expr, divisions)`  
-Offset `t` (time) by a given number of divisions.
+`off(t, expr, value)`  
+Offset `t` (time) by a given fraction of a cycle. ie. 0.5 would offset t by q/2.
 ```js
 // move across the canvas
 s0.x=t*4
