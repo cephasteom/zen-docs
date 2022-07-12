@@ -7,8 +7,8 @@ Functions that return numbers. Useful for x, y, and z stream parameters.
 
 ## noise
 A one-dimensional, simplex noise function.  
-`noise(t)`
-* `t`: time
+`noise(x)`
+* `x`: a changing value - probably `t`
 
 ```js
 s0.x=noise(t/q) * (q*4) + s/4
@@ -16,7 +16,10 @@ s0.y=s - (t%s)
 ```
 
 ## noise2d
-<!-- TODO -->
+A two-dimensional, simplex noise function.  
+`noise(x, y)`
+* `x`: a changing value - probably `t`
+* `y`: another changing value
 
 ## perlin
 A one-dimensional, perlin noise function.  
@@ -29,10 +32,33 @@ s0.y=s - (t%s)
 ```
 
 ## perlin2d
-<!-- TODO -->
+A two-dimensional, perlin noise function. 
 ## spike
-<!-- TODO -->
+Returns the first value, but 'spikes' to the second when expr evaluates as `true`. Returns to its original position over the given duration - expressed as a fraction of a cycle.
+
+`spike(t, expr, val1, val2, dur = 0.5)`
+```js
+// use stream 0's events to trigger a spike, lasting for half a cycle.
+// N.B. the use of `s0e` rather than `s0.e` to reference the expression rather than the value
+s1.x=spike(t, t => s0e, s*0.75, s*0.25, 0.5)
+```
 ## stick
-<!-- TODO -->
+Returns the first value, but 'sticks' on the second for the given duration after expr has evaluated as `true`. 
+
+`stick(t, expr, val1, val2, dur=0.5)`
+```js
+// same as above, but the second value sticks, rather than interpolating back to the original value
+// N.B. the use of `s0e` rather than `s0.e` to reference the expression rather than the value
+s1.x=stick(t, t => s0e, s*0.75, s*0.25, 0.5)
+```
+
+
 ## reset
-<!-- TODO -->
+Reset a pattern to the beginning each time it receives a true value. `true` resets `t` in the internal state, `false` is ignored. Requires an id to keep track of the internal state. 
+
+`reset(t, i=0, expr, bool)`
+
+```js
+// reset x to 0 each time stream 0's events are true
+s1.x=reset(t, 0, t => t*4, s0.e)
+```

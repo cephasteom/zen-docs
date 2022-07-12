@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Instruments
+# Instruments (browser)
 All synths are [Tone.js](https://tonejs.github.io/) instruments wrapped in a further layer of abstraction to standardise their public methods. These can be reduced to either `settable` or `mutable` methods, with method names mapping to parameter names. For example, `pan` determines the stereo placement of events, whereas `_pan` additionally provides values for mutations. Parameters differ for each synth type. Parameters without a corresponding method - for example, the use of `modi` outside of a frequency modulating synth - are ignored.
 
 ## Generic Methods
