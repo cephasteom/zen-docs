@@ -2,7 +2,7 @@
 sidebar_position: 11
 ---
 # Samples
-The following sample packs are available for use with the [sampler](/docs/docs/instruments/sampler) instrument:
+The following sample packs are available for use with the [sampler](/docs/docs/instruments-browser/sampler) instrument:
 * atmos: 0 - 35
 * cpu2: 0 - 28
 * perc: 0 - 71

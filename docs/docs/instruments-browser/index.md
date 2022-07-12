@@ -27,8 +27,8 @@ Useful presets have been developed to aid brevity, and can be accessed using the
 
 ## Available Instruments
 Zen's synthesis engine ships with the following instruments:
-* [Synth](/docs/docs/instruments/synth)
-* [FM Synth](/docs/docs/instruments/fmsynth)
-* [Membrane](/docs/docs/instruments/membrane)
-* [Metal](/docs/docs/instruments/metal)
-* [Sampler](/docs/docs/instruments/sampler)
+* [Synth](/docs/docs/instruments-browser/synth)
+* [FM Synth](/docs/docs/instruments-browser/fmsynth)
+* [Membrane](/docs/docs/instruments-browser/membrane)
+* [Metal](/docs/docs/instruments-browser/metal)
+* [Sampler](/docs/docs/instruments-browser/sampler)

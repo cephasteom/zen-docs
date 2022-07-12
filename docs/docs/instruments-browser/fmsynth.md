@@ -5,7 +5,7 @@ sidebar_position: 2
 `fm`; a frequency modulating synth, using the classic setup of a single carrier and modulator. 
 
 ## Basic Parameters
-In addition to the [generic methods](/docs/docs/instruments/), the FM Synth also accepts:
+In addition to the [generic methods](/docs/docs/instruments-browser/), the FM Synth also accepts:
 * `modi`: modulation index. 0 - infinity. Is mutable.
 * `harm`: harmonicity ratio. 0 - infinity. Is mutable.
 * `moda`: modulation envelope attack. In seconds.
@@ -28,7 +28,7 @@ s1.e=s1.y%s < s/2 ? 8n : 16n
 s1.m=true
 ```
 ## Advanced Parameters
-[Tone.js](https://tonejs.github.io/) also allows you to choose the [oscillator type](/docs/docs/instruments/resources/oscillators#oscillator-types), amount of oscillators, and time delay between each, for both the carrier and modulator signals.
+[Tone.js](https://tonejs.github.io/) also allows you to choose the [oscillator type](/docs/docs/instruments-browser/resources/oscillators#oscillator-types), amount of oscillators, and time delay between each, for both the carrier and modulator signals.
 * `carrosc` : oscillator type for carrier signal. Default 'sine`.
 * `carroscs`: amount of oscillators comprising the carrier signal.
 * `carrspread`: time offset between each oscillator in ms.
@@ -37,7 +37,7 @@ s1.m=true
 * `modoscs`: amount of oscillators comprising the carrier signal.
 * `modspread`: time offset between each oscillator in ms.
 
-If you choose a modulating [oscillator type](/docs/docs/instruments/resources/oscillators#oscillator-types) for either the carrier or modulator, further modulation is possible, including the [modulation type](/docs/docs/instruments/resources/oscillators#modulation-types), modulation index and harmonicity.
+If you choose a modulating [oscillator type](/docs/docs/instruments-browser/resources/oscillators#oscillator-types) for either the carrier or modulator, further modulation is possible, including the [modulation type](/docs/docs/instruments-browser/resources/oscillators#modulation-types), modulation index and harmonicity.
 * `carrmod` : carrier signal modulation type. sine | square | tri | saw
 * `carrmodi` : carrier signal modulation index - fm oscillator only.
 * `carrharm` : carrier signal harmonicity ratio - fm and am oscillators only.

@@ -2,10 +2,10 @@
 sidebar_position: 5
 ---
 # Sampler
-`sampler`: playback [samples](/docs/docs/instruments/resources/samples) loaded into a buffer.
+`sampler`: playback [samples](/docs/docs/instruments-browser/resources/samples) loaded into a buffer.
 
 ## Parameters
-* `sound` or `s`: reference a [sample](/docs/docs/instruments/resources/samples) pack name.
+* `sound` or `s`: reference a [sample](/docs/docs/instruments-browser/resources/samples) pack name.
 * `i`: the index of the sample within the directory
 * `n`: the note the sample should play - this assumes that all samples are tuned to C4. Additional tuning may be required with rate. Is mutable.
 * `a`: fade in time

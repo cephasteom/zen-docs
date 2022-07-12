@@ -5,8 +5,8 @@ sidebar_position: 1
 `synth`; a flexible synth, with control over oscillator type and modulating oscillator, where appropriate.
 
 ## Basic Parameters
-In addition to the [generic methods](/docs/docs/instruments/), the Synth also accepts:
-* `osc` : [oscillator type](/docs/docs/instruments/resources/oscillators#oscillator-types). Default 'sine`.
+In addition to the [generic methods](/docs/docs/instruments-browser/), the Synth also accepts:
+* `osc` : [oscillator type](/docs/docs/instruments-browser/resources/oscillators#oscillator-types). Default 'sine`.
 * `oscs`: amount of oscillators.
 * `spread`: time offset between each oscillator, in ms.
 * `oscmod` : oscillator modulation type. sine | square | tri | saw

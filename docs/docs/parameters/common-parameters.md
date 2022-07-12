@@ -38,7 +38,7 @@ s0.e=12n
 ```
 
 ## inst
-`inst` sets the instrument, or synth, to use, which in turn determines the active parameters. The [Instruments](/docs/docs/instruments/) section lists available instruments and their parameters. If no `inst` is set, defaults to the `fm` synth.
+`inst` sets the instrument, or synth, to use, which in turn determines the active parameters. The [Instruments](/docs/docs/instruments-browser/) section lists available instruments and their parameters. If no `inst` is set, defaults to the `fm` synth.
 
 ```js
 xps=['inst seq fm mem-bd']

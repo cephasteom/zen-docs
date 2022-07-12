@@ -5,7 +5,7 @@ sidebar_position: 3
 `mem`; a synth using a single oscillator with a pitch and amplitude ramping envelopes, suitable for kick or tom hits.
 
 ## Parameters
-In addition to the [generic methods](/docs/docs/instruments/), the Membrane Synth also accepts:
+In addition to the [generic methods](/docs/docs/instruments-browser/), the Membrane Synth also accepts:
 * `octs`: the number of octaves over which the pitch ramps. 0 - 10.
 
 ```js
