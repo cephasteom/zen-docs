@@ -31,13 +31,13 @@ s0.m=(t*4)%s < s/2
 ```
 
 ## Note Values
-Common note values are accepted in place of more complex logical expressions. These are `1n`, `2n`, `3n`, `4n`, `5n` ... `32n`. For example:
+Common note values are accepted in place of more complex logical expressions. These are `1n`, `2n`, `3n`, `4n`, `6n`, `8n`, `12n`, `16n`, and `24n`. For example:
 ```js
 s0.x=t*(s/q)
 s0.y=s/2
 s0.e=4n
 ```
-In the above example, `4n` represents quarter notes and is replaced before evaluation with the longhand expression `!(t%(q/4))`. The precise accuracy of these depends on the number of divisions per cycle, as defined by the variable `q`. For example, when `q` is equal to 32, `2n`, `4n` and `8n` will fall precisely on a division of the bar. For note values where 32 does not divide cleanly - `3n`, `5n` or `6n` - the calculation must be rounded to an integer in order that the expression evaluates at some point to `true`: `3n`, being rounded down, falls on divisions 0, 10, and 21. Where such inaccuracies are intolerable, `q` can be set to a higher, or more mathematically appropriate, value.
+In the above example, `4n` represents quarter notes and is replaced before evaluation with the longhand expression `!(t%(q/4))`. Less common values, such as `5n` are accepted, but will fall on the nearest division of the cycle. 
 
 Other streams' values can be referenced to define causal relationships:
 ```js

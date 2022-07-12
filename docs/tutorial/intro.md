@@ -6,9 +6,13 @@ sidebar_position: 1
 
 Let's learn **Zen in less than 5 minutes**.
 
+## Browser vs. App
+Zen comes in two forms - a browser version which lives at [https://zen.cephasteom.co.uk/](https://zen.cephasteom.co.uk/), and a downloadable app (coming soon). The former is essentially Zen-lite - there are more limited synth and effects options - but it's pretty convenient as you can just load a webpage and you're done. By comparison, the app has a slightly different architecture, generating sounds using [Supercollider](https://supercollider.github.io/) instead of web audio. It's therefore more powerful, performs better, but there's requires a more involved setup. Watch this space for this to be released.
+
+The Zen language is identical in each version, but keep an eye out for synths and effects labelled with `app only`, as these won't work in the browser.
 ## Getting Started
 
-Zen requires no installation beyond a modern browser. We recommend that you use Google Chrome.
+To get started, we'll use Zen-lite, which requires no installation beyond a modern browser. We recommend that you use Google Chrome.
 
 In your browser, navigate to [https://zen.cephasteom.co.uk/](https://zen.cephasteom.co.uk/).
 
