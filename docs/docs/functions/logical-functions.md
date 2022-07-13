@@ -51,3 +51,17 @@ Will stick `true` for the given duration after receiving a `true` value.
 // mutate for half a cycle each time stream 0's triggers an event
 s1.m=bstick(t, t => s0e, 0.25)
 ```
+
+## coin
+Weighted coin toss. Default is equal weighting.
+
+```js
+// equal probability of 0 or 1
+coin()
+
+// 3 in 4 chance of it being 1
+coin(0.75)
+
+// always 0
+coin(0)
+```
