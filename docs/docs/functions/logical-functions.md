@@ -52,6 +52,19 @@ Will stick `true` for the given duration after receiving a `true` value.
 s1.m=bstick(t, t => s0e, 0.25)
 ```
 
+## bpat
+Accepts a number or string of numbers, to be interpreted as a pattern of boolean values lasting the given duration (in cycles)/
+
+`pat(t, pat, duration=1)`
+
+```js
+// triplet pattern lasting 1 cycle
+s0.e=bpat(t, 100101, 1)
+
+// 8 note pattern played twice per cycle
+s0.e=bpat(t, 10001011, 0.5)
+```
+
 ## coin
 Weighted coin toss. Default is equal weighting.
 
