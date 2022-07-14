@@ -64,7 +64,7 @@ s1.x=reset(t, 0, t => t*4, s0.e)
 ```
 
 ## walk
-Take a random walk. Requires an id to keep track of the internal state (so that it knows what the last value was).
+Take a random walk / Brownian motion. Requires an id to keep track of the internal state (so that it knows what the last value was).
 
 `walk(i=0, range=4, offset=0)`
 
