@@ -64,15 +64,16 @@ s1.x=reset(t, 0, t => t*4, s0.e)
 ```
 
 ## walk
-Take a random walk / Brownian motion. Requires an id to keep track of the internal state (so that it knows what the last value was).
+Take a random walk / Brownian motion. Requires an id to keep track of the internal state.
 
 `walk(i=0, range=4, offset=0)`
 
-* i - id
-* range - scale the next random value by a given range. Range spans 0. Ie. a range of 4 picks a random value between -2 and 2...
-* offset - ...unless you've offset the range. Ie. An offset of 1 and range of 4 picks a random value between -1 and 3
-
 ```js
+// random walk adding values between -5 and 5 each step
 s0.x=walk(0, 10)
 s0.y=walk(1, 10)
+
+// random walk adding values between -2 and 6 each step
+s0.x=walk(0, 8, 2)
+s0.y=walk(1, 8, 2)
 ```
