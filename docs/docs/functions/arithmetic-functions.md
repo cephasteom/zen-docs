@@ -54,7 +54,7 @@ s1.x=stick(t, t => s0e, s*0.75, s*0.25, 0.5)
 
 
 ## reset
-Reset a pattern to the beginning each time it receives a true value. `true` resets `t` in the internal state, `false` is ignored. Requires an id to keep track of the internal state. 
+Reset a pattern to the beginning each time it receives a true value. `true` resets `t` in the internal state, `false` is ignored. Requires an ID to keep track of the internal state. 
 
 `reset(t, i=0, expr, bool)`
 
@@ -64,7 +64,7 @@ s1.x=reset(t, 0, t => t*4, s0.e)
 ```
 
 ## walk
-Take a random walk / Brownian motion. Requires an id to keep track of the internal state.
+Take a random walk (Brownian motion). Requires an ID to keep track of the internal state. To set x, y, and z simultaneously, see below.
 
 `walk(i=0, range=4, offset=0)`
 
@@ -76,4 +76,18 @@ s0.y=walk(1, 10)
 // random walk adding values between -2 and 6 each step
 s0.x=walk(0, 8, 2)
 s0.y=walk(1, 8, 2)
+```
+
+## walk3d
+Take a random walk (Brownian motion). For use with the xyz parameter, returns the array `[x,y,z]`.
+
+`walk3d(i=0, range=4, offset=0)`
+
+```js
+// three dimensional, random walk adding values between -5 and 5 each step
+s0.xyz=walk3d(0, 10)
+
+// three dimensional, random walk adding values between -2 and 6 each step
+s0.xyz=walk3d(0, 8, 2)
+s0.z=0 // overwrite a parameter should you wish
 ```
