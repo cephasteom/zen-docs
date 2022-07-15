@@ -91,3 +91,26 @@ s0.xyz=walk3d(0, 10)
 s0.xyz=walk3d(0, 8, 2)
 s0.z=0 // overwrite a parameter should you wish
 ```
+
+## bounce
+Bouncing ball algorithm. Requires an ID to keep track of the internal state, but takes no notice of `t`, so is deliberately chaotic. Accepts a height to start at, a floor to bounce off, and a speed
+
+`bounce(i=0, height=s/2, floor=0, speed=0.1)`
+
+```js
+// bounce on the y axis whilst travelling across the x
+s0.x=t*2
+s0.y=bounce(0)
+
+// slow bounce from top to half way down the screen
+s0.x=t*2
+s0.y=bounce(0, s - 1, s/2, 0.01)
+
+// floor is above starting height, so changes direction
+s0.x=t*2
+s0.y=bounce(0, s/2, s - 1, 0.1)
+
+// bounce on the x and y axis
+s0.x=bounce(0, s/2, 0, 0.2)
+s0.y=bounce(1, s/2, s - 1, 0.1)
+```
