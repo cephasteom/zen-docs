@@ -93,33 +93,30 @@ s0.z=0 // overwrite a parameter should you wish
 ```
 
 ## bounce
-Bouncing ball algorithm. Requires an ID to keep track of the internal state, but takes no notice of `t`, so is deliberately chaotic. Accepts a height to start at, a floor to bounce off, and a speed
+Bouncing ball algorithm. Requires an ID to keep track of the internal state.
 
-`bounce(i=0, height=s/2, floor=0, speed=0.1, reset=false)`
+`bounce(t, i=0, start=s/2, floor=0, speed=0.1, friction=1, cycles=8)`
 
 ```js
 // bounce on the y axis whilst travelling across the x
 s0.x=t*2
-s0.y=bounce(0)
+s0.y=bounce(t)
 
 // slow bounce from top to half way down the screen
 s0.x=t*2
-s0.y=bounce(0, s - 1, s/2, 0.01)
+s0.y=bounce(t, 0, s - 1, s/2, 0.01)
 
 // floor is above starting height, so changes direction
 s0.x=t*2
-s0.y=bounce(0, s/2, s - 1, 0.1)
+s0.y=bounce(t, 0, s/2, s - 1, 0.1)
 
 // reset every beat
 s0.x=t*2
-s0.y=bounce(0, s - 1, s/2, 0.01, 4n)
-
-// bounce on the x and y axis
-s0.x=bounce(0, s/2, 0, 0.2)
-s0.y=bounce(1, s/2, s - 1, 0.1)
+s0.y=bounce(t, 0, s - 1, s/2, 0.01, 1, 0.25)
 
 // trigger event on bounce
-s0.x=bounce(0, s/2, 0, 0.2)
+s0.x=t*4
+s0.y=bounce(t, 0, s/2, 0, 0.2, 0.8)
 s0.e=!s0.y
 ```
 
