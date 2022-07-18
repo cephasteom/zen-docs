@@ -95,7 +95,7 @@ s0.z=0 // overwrite a parameter should you wish
 ## bounce
 Bouncing ball algorithm. Requires an ID to keep track of the internal state, but takes no notice of `t`, so is deliberately chaotic. Accepts a height to start at, a floor to bounce off, and a speed
 
-`bounce(i=0, height=s/2, floor=0, speed=0.1)`
+`bounce(i=0, height=s/2, floor=0, speed=0.1, reset=false)`
 
 ```js
 // bounce on the y axis whilst travelling across the x
@@ -110,7 +110,28 @@ s0.y=bounce(0, s - 1, s/2, 0.01)
 s0.x=t*2
 s0.y=bounce(0, s/2, s - 1, 0.1)
 
+// reset every beat
+s0.x=t*2
+s0.y=bounce(0, s - 1, s/2, 0.01, 4n)
+
 // bounce on the x and y axis
 s0.x=bounce(0, s/2, 0, 0.2)
 s0.y=bounce(1, s/2, s - 1, 0.1)
+
+// trigger event on bounce
+s0.x=bounce(0, s/2, 0, 0.2)
+s0.e=!s0.y
+```
+
+## constrain
+Constrain a stream between two values. Stream reverses on reaching the upper value.
+
+`constrain(value, lo=0, hi=s)`
+
+```js
+// constrain x between 0 and half of the canvas
+// trigger an event when it hits either hi or lo
+s0.x=constrain(t*8, 0, s/2)
+s0.y=t*4
+s0.e=[0, s/2].includes(s0.x)
 ```
