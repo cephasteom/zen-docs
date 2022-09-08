@@ -31,6 +31,7 @@ Zen's synthesis engine ships with the following instruments:
 * [sampler](/docs/docs/instruments/sampler)
 * [granular](/docs/docs/instruments/granular)
 * [drum](/docs/docs/instruments/drum)
-* [karplus](/docs/docs/instruments/karplus)
+<!-- * [karplus](/docs/docs/instruments/karplus) -->
 * [mono](/docs/docs/instruments/mono)
 * [duo](/docs/docs/instruments/duo)
+* [metal](/docs/docs/instruments/metal)
