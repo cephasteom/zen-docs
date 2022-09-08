@@ -53,4 +53,4 @@ s0.m=t%q < q/2
 ```
 
 ## Parameter Names
-Zen is pretty agnostic about the parameter names you provide - to keep things open for integration with other equipment. That said, there's a few [common parameters](/docs/docs/parameters/common-parameters) which you'll use a lot, and others that become active when you've chosen a particular instrument. Common parameter names are listed in the following subsection. Instrument specific parameters are listed in the [browser](/docs/docs/instruments) and [app](/docs/docs/instruments-app) instruments section.
+Zen is fairly agnostic about parameter names - to keep things open for integration with other equipment. There's a few [common parameters](/docs/docs/parameters/common-parameters) which you'll use a lot and others that become active when you've chosen a particular instrument. Common parameter names are listed in the following subsection. Instrument parameters are listed in [instruments](/docs/docs/instruments).
