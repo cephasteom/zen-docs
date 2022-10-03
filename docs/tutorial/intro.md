@@ -2,12 +2,12 @@
 sidebar_position: 1
 ---
 
-# Quickstart Tutorial
+# 5 Minute Tutorial
 
 Let's learn **Zen in less than 5 minutes**.
 ## Getting Started
 
-To get started, we'll use Zen-lite, which requires no installation beyond a modern browser. We recommend that you use Google Chrome.
+Zen requires no installation beyond a modern browser. We recommend that you use Google Chrome.
 
 In your browser, navigate to [https://zen.cephasteom.co.uk/](https://zen.cephasteom.co.uk/).
 
@@ -24,7 +24,7 @@ Copy and paste this example in to the editor then:
 Nice. So what does it all mean?
 ## Time and the `t` variable
 
-Zen provides you with the variable `t` to represent time. This increments 32 times per cycle.
+Zen provides you with the variable `t` to represent time. This increments `q` times per cycle.
 
 Zen uses the concept of *streams* to represent the movement of an object through space.
 
