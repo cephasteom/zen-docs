@@ -39,6 +39,18 @@ s0.e=4n
 ```
 In the above example, `4n` represents quarter notes and is replaced before evaluation with the longhand expression `!(t%(q/4))`. Less common values, such as `5n` are accepted, but will fall on the nearest division of the cycle. 
 
+## Bar Values
+Longer notes can be achieved using bar notation in place of more complex logical expressions. These are `1b`, `2b`, `3b`, `4b`, `5b`, `6b`, `7b`, `8b`. 
+
+For example:
+```js
+s0.x=t*(s/q)
+s0.y=s/2
+s0.e=2b
+```
+In the above example, `2b` represents two bars and is replaced before evaluation with the longhand expression `(!(c%2) && !(t%q))`. Less common values, such as `5n` are accepted, but will fall on the nearest division of the cycle. 
+
+## Interference
 Other streams' values can be referenced to define causal relationships:
 ```js
 s0.x=t*(s/q)
