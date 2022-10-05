@@ -11,3 +11,11 @@ sidebar_position: 3
 
 ## Features
 * `shift + click` the numbers along the bottom to save a code block. `click` to recall.
+
+## Quick Help
+* `print(anything)` to print anything once
+* `print(anything, true)` to print on each loop
+* `print(samples())` to print a list of available samples
+* `print(synths())` to print a list of available instruments
+* `print(params(type))` to print a list instrument parameters
+
