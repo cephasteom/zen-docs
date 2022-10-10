@@ -91,35 +91,7 @@ const config = {
       },
       footer: {
         style: 'dark',
-        links: [
-          {
-            title: 'Docs',
-            items: [
-              {
-                label: 'Tutorial',
-                to: '/docs/tutorial/intro',
-              },
-            ],
-          },
-          {
-            title: 'Community',
-            items: [
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/CTeom',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'GitHub',
-                href: 'https://github.com/petethomasmusique/zen-docs',
-              },
-            ],
-          },
-        ],
+        links: [],
         copyright: `Copyright © ${new Date().getFullYear()} Cephas Teom`,
       },
       prism: {
