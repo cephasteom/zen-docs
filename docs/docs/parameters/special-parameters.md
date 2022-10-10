@@ -59,7 +59,7 @@ For a working example, see [degree](#degree) below.
 ```
 `degree` populates the `n` parameter using generic scale degrees and a preceding instance of the [scale](#scale) parameter (see above), from which it inherits the scales to derive its degrees from. It can handle single notes and polyphony, meaning that you can use it for lines and/or voicings.
 
-Using the stream's position in space, it calculates the scale then returns a note from the degrees provided. `degree` uses `1` for tonic, `2` for supertonic, and so on, rather than zero-indexing, to facilitate thinking in intervals.
+Using the stream's position in space, it calculates the scale then returns a note from the degrees provided. `degree` is zero-indexed, so uses `0` for tonic, `1` for supertonic, and so on.
 
 It can be combined with preceding instances of `n` using operators. 
 ```js

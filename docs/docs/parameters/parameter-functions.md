@@ -4,13 +4,15 @@ sidebar_position: 0
 # Parameter Functions
 Multiple values can be supplied to a parameter using the syntax `<param> <functionName> <...args>`.
 ## range
-`<param> range <low> <high> <step?>`  
-Map a range from low to high across the canvas. Omit the step for a continuous range, provide the step to quantize values. Values should all be numbers.
+`<param> range <low> <high> <step?> <frequency?>`  
+Map a range from low to high across the canvas. Omit the step for a continuous range, provide the step to quantize values. Frequency determines how many times range is mapped across the canvas. Values should all be numbers.
 ```js
 // continuous range from 0 to 4
 s0.xps=['modi range 0 4']
 // range from 1 to 4, in steps of 0.5
 s0.xps=['harm range 1 4 0.5']
+// range from 1 to 16, in steps of 1, mapped twice across the canvas
+s0.xps=['harm range 1 16 1 2']
 ```
 ## seq
 `<param> seq <...args>`  
