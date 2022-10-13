@@ -7,9 +7,13 @@ sidebar_position: 1
 Let's learn **Zen in less than 5 minutes**.
 ## Getting Started
 
-Zen requires no installation beyond a modern browser. We recommend that you use Google Chrome.
+Zen requires very little installation beyond a modern browser. We recommend that you use Google Chrome.
 
-In your browser, navigate to [https://zen.cephasteom.co.uk/](https://zen.cephasteom.co.uk/).
+In your browser, navigate to [https://zen.cephasteom.co.uk/](https://zen.cephasteom.co.uk/). 
+
+The first time Zen loads may take a few seconds as it has to download samples. However, Zen caches all resources to the local cache so, once you've visited the site once, it will load quickly the next time, and will even work offline.
+
+Optional: we recommend clicking the three dots in the top right > More Tools > Create Shortcut. Give it a name, then check `open as window`. This will create a standalone version of the web page which can be used like a regular app. See [this article](https://www.lifewire.com/create-shortcuts-in-google-chrome-for-windows-4103617) for more options.
 
 You're ready to begin.
 
