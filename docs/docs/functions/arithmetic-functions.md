@@ -34,33 +34,40 @@ s0.y=s - (t%s)
 ## perlin2d
 A two-dimensional, perlin noise function. 
 ## spike
-Returns the first value, but 'spikes' to the second when expr evaluates as `true`. Returns to its original position over the given duration - expressed as a fraction of a cycle.
+Returns the lo value, but 'spikes' to the hi when trigger evaluates as `true`. Returns to its original position over the given duration - expressed as a fraction of a cycle.
 
-`spike(t, expr, val1, val2, dur = 0.5)`
+`spike(trigger: bool, lo: number, hi: number, dur: number)`
 ```js
-// use stream 0's events to trigger a spike, lasting for half a cycle.
-// N.B. the use of `s0e` rather than `s0.e` to reference the expression rather than the value
-s1.x=spike(t, t => s0e, s*0.75, s*0.25, 0.5)
+s1.x=t*4
+s1.y=spike(1n, s*0, s/2, 0.5)
 ```
 ## stick
-Returns the first value, but 'sticks' on the second for the given duration after expr has evaluated as `true`. 
+Returns the lo value, but 'sticks' on hi for the given duration after trigger has evaluated as `true`. 
 
-`stick(t, expr, val1, val2, dur=0.5)`
+`stick(trigger: bool, lo: number, hi: number, dur: number)`
 ```js
-// same as above, but the second value sticks, rather than interpolating back to the original value
-// N.B. the use of `s0e` rather than `s0.e` to reference the expression rather than the value
-s1.x=stick(t, t => s0e, s*0.75, s*0.25, 0.5)
+s1.x=t*4
+s1.y=stick(1n, s*0, s/2, 0.5)
+```
+
+If you want to use another stream to trigger an event, wrap it in () to reference the original expression, rather than the result. For example"
+```js
+s0.e=1n
+
+s1.x=t*4
+s1.y=stick((s0.e), s*0, s/2, 0.5)
 ```
 
 
 ## reset
-Reset a pattern to the beginning each time it receives a true value. `true` resets `t` in the internal state, `false` is ignored. Requires an ID to keep track of the internal state. 
+Reset a pattern to the beginning each time it receives a true value. `true` resets `t` in the internal state, `false` is ignored. Requires an ID to keep track of the internal state. You can omit the bool to simply get the current value, allowing multiple patterns to hook in to the procedure. See below.
 
-`reset(t, i=0, expr, bool)`
+`reset(position: number, id: number, trigger: bool)`
 
 ```js
-// reset x to 0 each time stream 0's events are true
-s1.x=reset(t, 0, t => t*4, s0.e)
+// reset x and y to the beginning every bar.
+s0.x=reset(t*16, 0, 1b)
+s0.y=reset(noise(t*q) * s, 0)
 ```
 
 ## walk
@@ -95,28 +102,24 @@ s0.z=0 // overwrite a parameter should you wish
 ## bounce
 Bouncing ball algorithm. Requires an ID to keep track of the internal state.
 
-`bounce(t, i=0, start=s/2, floor=0, speed=0.1, friction=1, cycles=8)`
+`bounce(i: number, hi?: number?, lo?: number, trigger?: boolean, friction?: number, speed?: number)`
 
 ```js
 // bounce on the y axis whilst travelling across the x
 s0.x=t*2
-s0.y=bounce(t)
+s0.y=bounce()
 
 // slow bounce from top to half way down the screen
 s0.x=t*2
-s0.y=bounce(t, 0, s - 1, s/2, 0.01)
-
-// floor is above starting height, so changes direction
-s0.x=t*2
-s0.y=bounce(t, 0, s/2, s - 1, 0.1)
+s0.y=bounce(0, s - 1, s/2, 4b, 0.01)
 
 // reset every beat
-s0.x=t*2
-s0.y=bounce(t, 0, s - 1, s/2, 0.01, 1, 0.25)
+s0.x=t*8
+s0.y=bounce(0, s/2, 0, 4n, 4)
 
 // trigger event on bounce
-s0.x=t*4
-s0.y=bounce(t, 0, s/2, 0, 0.2, 0.8)
+s0.x=noise(t/q) * s
+s0.y=bounce(0,s-(s/16), 0)
 s0.e=!s0.y
 ```
 
