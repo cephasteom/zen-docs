@@ -5,7 +5,7 @@ sidebar_position: 2
 Functions that return a true or false (boolean). These are always prefixed by a `b` to denote boolean - as in `bnoise` or `btoggle` - and are useful for triggering events or mutations.
 ## bnoise
 This function passes `t` to a simplex noise algorithm, returning a smooth streams of values between 0 and 1.  
-`bnoise(t, threshold, quantize)`
+`bnoise(t:number, threshold: number, quantize: number)`
 * `t`: time
 * `threshold`: the value which, when exceeded, returns true. Should be between 0 and 1.
 * `quantize`: limits `true` results to a particular note value - defaults to quarter notes
@@ -20,15 +20,14 @@ Events are trigged when the noise value exceeds a threshold of 0.3. This will be
 ## bnoise2d
 Same as above, but with two-dimensions.
 
-`bnoise2d(t, x, y, threshold, quantize)`
+`bnoise2d(t: number, x: number, y: number, threshold: number, quantize: number)`
 
 ## btoggle
 To create interesting pattern interferences, it can be useful to toggle a stream's data between two states using the events of another.  
-N.B. this is a rare function that doesn't require time passed in as its first argument.
 
-`btoggle(i, bool)`
+`btoggle(i: number, trigger: boolean)`
 * `i`: an integer value used as an identifier, in order that the function's internal state can keep track of different streams.
-* `bool`: true values toggle the internal state, whereas false values are ignored and have no effect
+* `trigger`: true values toggle the internal state, false values are ignored
 
 ```js
 s0.x=t*(s/q)
@@ -45,11 +44,11 @@ Here, `s0` events occur every half note. `s1` events occur every bar: mutations 
 ## bstick
 Will stick `true` for the given duration after receiving a `true` value.
 
-`bstick(t, expr, duration=0.5)`
+`bstick(trigger: bool, duration=0.5)`
 
 ```js
-// mutate for half a cycle each time stream 0's triggers an event
-s1.m=bstick(t, t => s0e, 0.25)
+// mutate for half a cycle
+s1.m=bstick(1n, 0.5)
 ```
 
 ## bpat
