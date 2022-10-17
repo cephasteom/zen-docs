@@ -6,7 +6,7 @@ Zen supplies a number of functions to keep your expressions readable and brief. 
 
 Many of these functions expect an expression as an argument, and manipulate the value of `t` for a particular effect. 
 
-When referencing another stream parameter - `s0.e`, `s1.x`, `s5.z`, etc. - within an expression, *wrap the reference in () in order to pass the expression assigned to the parameter, rather than the result of the expression*. Under the hood, the parser replaces these shorthands with the code assigned at the corresponding stream parameter. For example,
+When referencing another stream parameter - `s0.e`, `s1.x`, `s5.z`, etc. - within an expression, *wrap the reference in {} in order to pass the expression assigned to the parameter, rather than the result of the expression*. Under the hood, the parser replaces these shorthands with the code assigned at the corresponding stream parameter. For example,
 ```js
 s0.e=1n
 

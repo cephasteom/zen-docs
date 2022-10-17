@@ -50,7 +50,7 @@ s1.x=t*4
 s1.y=stick(1n, s*0, s/2, 0.5)
 ```
 
-If you want to use another stream to trigger an event, wrap it in () to reference the original expression, rather than the result. For example"
+If you want to use another stream to trigger an event, wrap it in {} to reference the original expression, rather than the result. For example"
 ```js
 s0.e=1n
 
@@ -60,49 +60,45 @@ s1.y=stick((s0.e), s*0, s/2, 0.5)
 
 
 ## reset
-Reset a pattern to the beginning each time it receives a true value. `true` resets `t` in the internal state, `false` is ignored. Requires an ID to keep track of the internal state. You can omit the bool to simply get the current value, allowing multiple patterns to hook in to the procedure. See below.
+Reset a pattern to the beginning each time it receives a true value. `true` resets `t` in the internal state, `false` is ignored.
 
-`reset(position: number, id: number, trigger: bool)`
+`reset(expr: number, trigger: boolean)`
 
 ```js
 // reset x and y to the beginning every bar.
-s0.x=reset(t*16, 0, 1b)
-s0.y=reset(noise(t*q) * s, 0)
+s0.x=reset(t*16, 1b)
+s0.y=reset(noise(t*q) * s, 1b)
 ```
 
 ## walk
-Take a random walk (Brownian motion). Requires an ID to keep track of the internal state. To set x, y, and z simultaneously, see below.
+Take a random walk (Brownian motion). To set x, y, and z simultaneously, see below.
 
-`walk(i=0, range=4, offset=0)`
+`walk()`
 
 ```js
 // random walk adding values between -5 and 5 each step
-s0.x=walk(0, 10)
-s0.y=walk(1, 10)
-
-// random walk adding values between -2 and 6 each step
-s0.x=walk(0, 8, 2)
-s0.y=walk(1, 8, 2)
+s0.x=walk() * 16
+s0.y=walk() * 32
 ```
 
 ## walk3d
 Take a random walk (Brownian motion). For use with the xyz parameter, returns the array `[x,y,z]`.
 
-`walk3d(i=0, range=4, offset=0)`
+`walk3d()`
 
 ```js
-// three dimensional, random walk adding values between -5 and 5 each step
-s0.xyz=walk3d(0, 10)
+// three dimensional, random walk
+s0.xyz=walk3d().map(i => i*32)
 
-// three dimensional, random walk adding values between -2 and 6 each step
-s0.xyz=walk3d(0, 8, 2)
+// three dimensional, random walk
+s0.xyz=walk3d().map(i => i*32)
 s0.z=0 // overwrite a parameter should you wish
 ```
 
 ## bounce
 Bouncing ball algorithm. Requires an ID to keep track of the internal state.
 
-`bounce(i: number, hi?: number?, lo?: number, trigger?: boolean, friction?: number, speed?: number)`
+`bounce(hi?: number?, lo?: number, trigger?: boolean, friction?: number, speed?: number)`
 
 ```js
 // bounce on the y axis whilst travelling across the x
@@ -111,15 +107,15 @@ s0.y=bounce()
 
 // slow bounce from top to half way down the screen
 s0.x=t*2
-s0.y=bounce(0, s - 1, s/2, 4b, 0.01)
+s0.y=bounce( s - 1, s/2, 4b, 0.1)
 
 // reset every beat
 s0.x=t*8
-s0.y=bounce(0, s/2, 0, 4n, 4)
+s0.y=bounce(s/2, 0, 4n, 4)
 
 // trigger event on bounce
 s0.x=noise(t/q) * s
-s0.y=bounce(0,s-(s/16), 0)
+s0.y=bounce(s-(s/16), 0)
 s0.e=!s0.y
 ```
 
