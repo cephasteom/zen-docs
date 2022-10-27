@@ -55,14 +55,14 @@ If you want to use another stream to trigger an event, wrap it in {} to referenc
 s0.e=1n
 
 s1.x=t*4
-s1.y=stick((s0.e), s*0, s/2, 0.5)
+s1.y=stick({s0.e}, s*0, s/2, 0.5)
 ```
 
 
 ## reset
 Reset a pattern to the beginning each time it receives a true value. `true` resets `t` in the internal state, `false` is ignored.
 
-`reset(expr: number, trigger: boolean)`
+`reset(expr: number, reset: boolean)`
 
 ```js
 // reset x and y to the beginning every bar.
@@ -131,3 +131,13 @@ s0.x=constrain(t*8, 0, s/2)
 s0.y=t*4
 s0.e=[0, s/2].includes(s0.x)
 ```
+
+## mtr
+Map to range.
+
+`mtr(x, inLo, inHi, outLo, outHi)`
+
+## mtsr
+Map to step range.
+
+`mtr(x, inLo, inHi, outLo, outHi, step)`

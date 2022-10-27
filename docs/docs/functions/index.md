@@ -11,5 +11,5 @@ When referencing another stream parameter - `s0.e`, `s1.x`, `s5.z`, etc. - withi
 s0.e=1n
 
 s1.x=t*4
-s1.y=spike((s0.e), s*0, s/2, 0.5)
+s1.y=spike({s0.e}, s*0, s/2, 0.5)
 ```

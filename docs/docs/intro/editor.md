@@ -15,9 +15,11 @@ sidebar_position: 3
 ## Getting Help
 For quick help whilst you're making music, or to interrogate what's going on in your code, use the `print()` function. For example, `print(t)` will print the variable `t` once on execution. `print(t, true)` will print the variable `t` on each iteration.
 
-* `print(samples())` to get a list of available samples
-* `print(fx())` to get a list of fx and fx params
-* `print(synths())` to get a list of synths
+* `print(fx)` to get a list of fx and fx params
+* `print(synths)` to get a list of synths
+* `print(scales)` to get a list of scales
+* `print(chords)` to get a list of scales
+* `print(samples())` to get a list of available samples (note that it's a function call, as buffers can change whilst loading)
 * `print(params(type))` to get a list of synth params, for example `print(params('fm'))`
 * `print(functions(type))` to get a list of functions params. Accepts `num`, `bool`, and `t`. Leave blank for all. 
 * `print(args(type))` to get a list of function arguments. Accepts any function name.
