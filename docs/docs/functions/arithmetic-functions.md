@@ -131,13 +131,3 @@ s0.x=constrain(t*8, 0, s/2)
 s0.y=t*4
 s0.e=[0, s/2].includes(s0.x)
 ```
-
-## mtr
-Map to range.
-
-`mtr(x, inLo, inHi, outLo, outHi)`
-
-## mtsr
-Map to step range.
-
-`mtr(x, inLo, inHi, outLo, outHi, step)`
