@@ -48,3 +48,13 @@ if(c%8 < 4) {
     load(2)
 };
 ```
+
+## save
+Save allows you to save code blocks for use with load. Due to a bug, these currently only save to the app state, rather than `localStorage`.
+
+`save(id: number)`
+
+```js
+// ... some zen code
+save(1)
+```
